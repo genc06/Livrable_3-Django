@@ -12,6 +12,7 @@ class Categorie(models.Model):
 
 
 class Exercice(models.Model):
+
     nom = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
 
