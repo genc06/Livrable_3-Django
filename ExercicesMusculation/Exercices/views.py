@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from models import Exercice
 from models import Categorie
