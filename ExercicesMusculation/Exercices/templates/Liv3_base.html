@@ -10,6 +10,10 @@
 </head>
 <body>
     <h1>Exercices de Musculation</h1>
-
+    <ul>
+        {% for exercice in exercices %}
+            <li>{{ exercice.nom }}</li>
+        {% endfor %}
+    </ul>
 </body>
 </html>
