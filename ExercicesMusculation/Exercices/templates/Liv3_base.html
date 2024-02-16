@@ -5,16 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="Liv3_style.css">
     <script src="js/main.js"></script>
-    <title>Exercices de Musculation</title>
+    <title>New Fit Training</title>
 </head>
 <body>
     <h1>Exercices de Musculation</h1>
 
 
     <ul>
-         for categorie in categories
-            <li> categorie.nom </li>
-         endfor
+        {% for categorie in categories %}
+            <li>{{ categorie.nom }}</li>
+        {% endfor %}
     </ul>
 
 
