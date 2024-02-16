@@ -10,13 +10,11 @@
 <body>
     <h1>Exercices de Musculation</h1>
 
-
     <ul>
-        {% for categorie in categories %}
-            <li>{{ categorie.nom }}</li>
-        {% endfor %}
-    </ul>
-
+    {% for categorie in categories %}
+        <li>{{ categorie.nom }}</li>
+    {% endfor %}
+</ul>
 
     <h2>Ajouter une nouvelle catégorie</h2>
     <form action="{% url 'add_category' %}" method="post">
