@@ -3,23 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/templates/Liv3_style.css">
+    <link rel="stylesheet" type="text/css" href="Liv3_style.css">
     <script src="js/main.js"></script>
     <title>Exercices de Musculation</title>
 </head>
 <body>
-    <h1>Exercices de Musculation</h1>
-    <ul>
-        {% for exercice in exercices %}
-            <li>{{ exercice.nom }}</li>
-        {% endfor %}
-    </ul>
+    <h1>Liste des Catégories</h1>
 
 
     <ul>
         {% for categorie in categories %}
-        <li>{{ categorie.nom }}</li>
+            <li>{{ categorie.nom }}</li>
         {% endfor %}
     </ul>
+
+
+    <h2>Ajouter une nouvelle catégorie</h2>
+    <form action="{% url 'add_category' %}" method="post">
+        {% csrf_token %}
+        <label for="new_category">Nom de la nouvelle catégorie:</label><br>
+        <input type="text" id="new_category" name="new_category"><br>
+        <input type="submit" value="Ajouter">
+    </form>
+
+
+    <h2>Supprimer une catégorie</h2>
+    <form action="{% url 'delete_category' %}" method="post">
+        {% csrf_token %}
+        <select name="category_to_delete" id="category_to_delete">
+            {% for categorie in categories %}
+                <option value="{{ categorie.id }}">{{ categorie.nom }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Supprimer">
+    </form>
+
+
+    <h2>Mettre à jour une catégorie</h2>
+    <form action="{% url 'update_category' %}" method="post">
+        {% csrf_token %}
+        <select name="category_to_update" id="category_to_update">
+            {% for categorie in categories %}
+                <option value="{{ categorie.id }}">{{ categorie.nom }}</option>
+            {% endfor %}
+        </select><br>
+        <label for="updated_category">Nouveau nom:</label><br>
+        <input type="text" id="updated_category" name="updated_category"><br>
+        <input type="submit" value="Mettre à jour">
+    </form>
 </body>
 </html>
