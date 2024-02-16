@@ -28,11 +28,11 @@ def update_category(request, category_id):
     else:
         return HttpResponse("Method Not Allowed", status=405)
 
-def add_category(request):
+def add_exercice(request):
     if request.method == 'POST':
-        new_category_name = request.POST.get('new_category_name')
-        category = Categorie(nom=new_category_name)
-        category.save()
+        new_exercice_name = request.POST.get('new_category_name')
+        exercice = Categorie(nom=new_exercice_name)
+        exercice.save()
         return redirect('categories')
     else:
         return HttpResponse("Method Not Allowed", status=405)

@@ -16,20 +16,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+
 from ExercicesMusculation.Exercices import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('categories/', views.afficheCategorie, name='categories'),
-
-    # URL pour ajouter une nouvelle catégorie
-    path('categories/add/', views.add_category, name='add_category'),
-
-    # URL pour supprimer une catégorie existante
+    path('exercices/', views.afficheExercices, name='exercices'),
     path('categories/delete/<int:category_id>/', views.delete_category, name='delete_category'),
-
-    # URL pour mettre à jour une catégorie existante
     path('categories/update/<int:category_id>/', views.update_category, name='update_category'),
+    path('exercices/add/', views.add_exercice, name='add_exercice'),
+
 ]
 
 
