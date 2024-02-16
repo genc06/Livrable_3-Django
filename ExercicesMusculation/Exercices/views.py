@@ -1,7 +1,7 @@
 
 from django.shortcuts import render
 from .models import Exercice, Categorie
-from .models import CategorieExercice
+
 
 
 
