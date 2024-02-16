@@ -8,7 +8,7 @@ def afficheExercices(request):
 
 def afficheCategorie(request):
     categories = Categorie.objects.all()
-    return render(request, 'Liv3_categorie.html', {'categories': categories})
+    return render(request, 'Liv3_base.html', {'categories': categories})
 
 def delete_category(request, category_id):
     if request.method == 'POST':
