@@ -8,13 +8,13 @@
     <title>Exercices de Musculation</title>
 </head>
 <body>
-    <h1>Liste des Catégories</h1>
+    <h1>Exercices de Musculation</h1>
 
 
     <ul>
-        {% for categorie in categories %}
-            <li>{{ categorie.nom }}</li>
-        {% endfor %}
+         for categorie in categories
+            <li> categorie.nom </li>
+         endfor
     </ul>
 
 
@@ -40,7 +40,7 @@
 
 
     <h2>Mettre à jour une catégorie</h2>
-    <form action="{% url 'update_category' %}" method="post">
+    <form action=" url 'update_category'" method="post">
         {% csrf_token %}
         <select name="category_to_update" id="category_to_update">
             {% for categorie in categories %}
